@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd" id="WebApp_ID" version="3.0">
+  <display-name>LibraryApp</display-name>
+  <welcome-file-list>
+    <welcome-file>index.html</welcome-file>
+    <welcome-file>index.htm</welcome-file>
+    <welcome-file>index.jsp</welcome-file>
+    <welcome-file>default.html</welcome-file>
+    <welcome-file>default.htm</welcome-file>
+    <welcome-file>default.jsp</welcome-file>
+  </welcome-file-list>
+  
+  <servlet>
+    <servlet-name>BookListJSON</servlet-name>
+    <servlet-class>servlets.BookListJSONServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>BookListJSON</servlet-name>
+    <url-pattern>/BookList</url-pattern>
+  </servlet-mapping>
+  
+   <servlet>
+    <servlet-name>BookListJSONReader</servlet-name>
+    <servlet-class>servlets.BookListJSONReader</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>BookListJSONReader</servlet-name>
+    <url-pattern>/booklistjson.html</url-pattern>
+  </servlet-mapping>
+
+	<servlet>
+    <servlet-name>updateprofile</servlet-name>
+    <servlet-class>servlets.UpdateProfileOperationsServlet</servlet-class>
+  </servlet>
+  
+   <servlet-mapping>
+    <servlet-name>updateprofile</servlet-name>
+    <url-pattern>/updateprofile.html</url-pattern>
+  </servlet-mapping>
+
+   <servlet>
+    <servlet-name>processeditbookform</servlet-name>
+    <servlet-class>servlets.ProcessEditBookFormServlet</servlet-class>
+  </servlet>
+  
+   <servlet-mapping>
+    <servlet-name>processeditbookform</servlet-name>
+    <url-pattern>/editbook.html</url-pattern>
+  </servlet-mapping>
+  
+   <servlet>
+    <servlet-name>issuebookform</servlet-name>
+    <servlet-class>servlets.IssueBookOperationsServlet</servlet-class>
+  </servlet>
+  
+   <servlet-mapping>
+    <servlet-name>issuebookform</servlet-name>
+    <url-pattern>/issuebook.html</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+    <servlet-name>processviewbooksform</servlet-name>
+    <servlet-class>servlets.ProcessViewBooksFormServlet</servlet-class>
+  </servlet>
+  
+   <servlet-mapping>
+    <servlet-name>processviewbooksform</servlet-name>
+    <url-pattern>/viewbooks.html</url-pattern>
+  </servlet-mapping>
+  
+  <resource-ref>
+      <description>DB Connection</description>
+      <res-ref-name>jdbc/librarydb</res-ref-name>
+      <res-type>javax.sql.DataSource</res-type>
+      <res-auth>Container</res-auth>
+  </resource-ref>
+</web-app>
